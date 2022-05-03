@@ -27,10 +27,11 @@ const QuestionCard: React.FC<Props> = ({
       <p dangerouslySetInnerHTML={{ __html: question }}></p>
       <div>
         {answers.map(answer => (
-          <ButtonWrapper
+          //   <ButtonWrapper
+          <div
             key={answer}
-            correct={userAnswer?.correctAnswer === answer}
-            userClicked={userAnswer?.answer === answer}
+            // correct={userAnswer?.correctAnswer === answer} // <---- ERROR HERE WHY? I DUNNO
+            // userClicked={userAnswer?.answer === answer}
           >
             <button
               disabled={userAnswer ? true : false}
@@ -39,7 +40,8 @@ const QuestionCard: React.FC<Props> = ({
             >
               <span dangerouslySetInnerHTML={{ __html: answer }}></span>
             </button>
-          </ButtonWrapper>
+            {/* </ButtonWrapper> */}
+          </div>
         ))}
       </div>
     </Wrapper>
